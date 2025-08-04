@@ -3,6 +3,9 @@ import { detect } from "./chord-detect";
 
 describe("@tonal/chord-detect", () => {
   test("detect", () => {
+    // C
+    expect(detect(["C", "E", "G"])).toEqual(["C"]);
+    expect(detect(["C", "E"])).toEqual(["C"]);
     expect(detect(["D", "F#", "A", "C"])).toEqual(["D7"]);
     expect(detect(["F#", "A", "C", "D"])).toEqual(["D7/F#"]);
     expect(detect(["A", "C", "D", "F#"])).toEqual(["D7/A"]);

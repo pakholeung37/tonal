@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIDI Chord Detector</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      .container {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .status {
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+      .status.connecting {
+        background: #fff3cd;
+        color: #856404;
+        border: 1px solid #ffeaa7;
+      }
+      .status.connected {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+      }
+      .status.error {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+      .midi-info {
+        margin: 20px 0;
+      }
+      .midi-devices {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 10px 0;
+      }
+      .current-notes {
+        background: #e7f3ff;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 10px 0;
+        min-height: 50px;
+      }
+      .detected-chords {
+        background: #f0f8e7;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 10px 0;
+        min-height: 50px;
+      }
+      .chord {
+        display: inline-block;
+        background: #007bff;
+        color: white;
+        padding: 8px 16px;
+        margin: 5px;
+        border-radius: 20px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .chord.primary {
+        background: #28a745;
+        transform: scale(1.1);
+      }
+      .note {
+        display: inline-block;
+        background: #6c757d;
+        color: white;
+        padding: 4px 8px;
+        margin: 2px;
+        border-radius: 12px;
+        font-size: 14px;
+      }
+      .instructions {
+        background: #d1ecf1;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 20px 0;
+        border-left: 4px solid #bee5eb;
+      }
+    </style>
+    <script type="module" src="src/dev.ts"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎹 MIDI Chord Detector</h1>
+      
+      <div class="instructions">
+        <h3>使用说明：</h3>
+        <p>1. 连接MIDI键盘或MIDI设备到您的电脑</p>
+        <p>2. 允许浏览器访问MIDI设备</p>
+        <p>3. 弹奏和弦，系统会自动检测并显示和弦名称</p>
+      </div>
+
+      <div id="midi-status" class="status connecting">正在连接MIDI设备...</div>
+      
+      <div class="midi-info">
+        <h3>MIDI设备：</h3>
+        <div id="midi-devices" class="midi-devices">暂无设备</div>
+      </div>
+
+      <div class="midi-info">
+        <h3>当前音符：</h3>
+        <div id="current-notes" class="current-notes">请弹奏音符...</div>
+      </div>
+
+      <div class="midi-info">
+        <h3>检测到的和弦：</h3>
+        <div id="detected-chords" class="detected-chords">等待和弦输入...</div>
+      </div>
+    </div>
+  </body>
+</html>
