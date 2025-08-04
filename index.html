@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script src="tonal.min.js"></script>
+    <script type="module" src="src/dev.ts"></script>
   </head>
   <body>
     <h1>Tonal browser test</h1>
@@ -10,8 +10,6 @@
     <pre></pre>
   </body>
   <script>
-    var el = document.querySelector("pre");
-    var data = Tonal.Key.majorKey("Cb");
-    el.textContent = JSON.stringify(data, null, 2);
+   
   </script>
 </html>

@@ -6,6 +6,7 @@
   "scripts": {
     "publish-packages": "pnpm run test:all && changeset version && changeset publish",
     "build": "tsup src/index.ts --sourcemap --dts --format esm,cjs",
+    "dev": "vite",
     "format": "prettier --write .",
     "test": "vitest",
     "test:run": "vitest run",
@@ -44,8 +45,8 @@
     "lodash": "^4.17.21",
     "prettier": "^3.4.2",
     "tsup": "^8.3.5",
-    "turbo": "^2.3.3",
     "typescript": "^5.7.2",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "vite": "^7.0.6"
   }
 }
