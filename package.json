@@ -1,22 +1,18 @@
 {
-  "name": "workspace",
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "main": "packages/tonal/dist/index.js",
-  "module": "packages/tonal/dist/index.mjs",
-  "types": "packages/tonal/dist/index.d.ts",
+  "name": "@pakholeung37/tonal",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "publish-packages": "npm run test:all && changeset version && changeset publish",
-    "build": "turbo run build",
-    "format": "prettier --write packages/**/*.ts packages/**/package.json",
+    "publish-packages": "pnpm run test:all && changeset version && changeset publish",
+    "build": "tsup src/index.ts --sourcemap --dts --format esm,cjs",
+    "format": "prettier --write .",
     "test": "vitest",
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "lint": "eslint 'packages/**/*.ts'",
-    "lint:fix": "eslint 'packages/**/*.ts' --fix",
-    "test:all": "npm run format && npm run lint && npm run build && npm run test:run"
+    "lint": "eslint '**/*.ts'",
+    "lint:fix": "eslint '**/*.ts' --fix",
+    "test:all": "pnpm run format && pnpm run lint && pnpm run build && pnpm run test:run"
   },
   "prettier": {},
   "eslintConfig": {
@@ -51,6 +47,5 @@
     "turbo": "^2.3.3",
     "typescript": "^5.7.2",
     "vitest": "^3.2.4"
-  },
-  "packageManager": "npm@11.0.0"
+  }
 }

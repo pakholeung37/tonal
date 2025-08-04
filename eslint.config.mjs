@@ -6,15 +6,12 @@ import tsPlugin from "@typescript-eslint/eslint-plugin";
 export default [
   {
     files: ["packages/**/*.ts"],
-    ignores: [
-      "node_modules/",
-      "packages/**/dist/*",
-    ],
+    ignores: ["node_modules/", "packages/**/dist/*"],
 
     languageOptions: {
       globals: {
         ...globals.browser, // Standard browser globals (e.g., window, document)
-        ...globals.node,    // Standard Node.js globals (e.g., process, require)
+        ...globals.node, // Standard Node.js globals (e.g., process, require)
       },
       ecmaVersion: "latest",
       sourceType: "module",
@@ -22,8 +19,7 @@ export default [
 
       parserOptions: {
         project: "./tsconfig.json", // Adjust this path if your main tsconfig is elsewhere
-        ecmaFeatures: {
-        },
+        ecmaFeatures: {},
       },
     },
 
@@ -35,8 +31,10 @@ export default [
       ...js.configs.recommended.rules,
       ...tsPlugin.configs["eslint-recommended"].rules,
       ...tsPlugin.configs.recommended.rules,
-      "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
-
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        { argsIgnorePattern: "^_" },
+      ],
     },
   },
 ];

@@ -23,7 +23,7 @@ Unfortunately there are a lot of breaking changes:
 
 ### tonal is published under `@tonaljs` namespace
 
-To avoid mistakes (and have a better npm home) from v3 the npm packages are namespaced.
+To avoid mistakes (and have a better pnpm home) from v3 the pnpm packages are namespaced.
 
 So instead of:
 
@@ -36,9 +36,9 @@ import * as tonal from "tonal";
 Now we have to:
 
 ```js
-const tonal = require("@tonaljs/core");
+const tonal = require("./core");
 // or
-import * as tonal from "@tonaljs/core";
+import * as tonal from "./core";
 ```
 
 ### Better module dependencies
@@ -47,7 +47,7 @@ In version 2 `tonal` was a facade for the modules, so dependencies between modul
 
 This is not longer true in v3
 
-### `@tonaljs/core` contains the tonal "core" functions
+### `./core` contains the tonal "core" functions
 
 In version 2 `tonal` was a facade for the rest of the modules:
 
@@ -56,10 +56,10 @@ In version 2 `tonal` was a facade for the rest of the modules:
 import { Note } from "tonal";
 ```
 
-Now, `@tonaljs/core` module contains just four functions:
+Now, `./core` module contains just four functions:
 
 ```js
-import { note, interval, transpose, distance } from "@tonaljs/core";
+import { note, interval, transpose, distance } from "./core";
 ```
 
 ### Midi related functions are moved from `note` to `midi`
@@ -75,7 +75,7 @@ You will find the function at:
 
 ```js
 // v3
-import { midiToNoteName } from "@tonaljs/midi";
+import { midiToNoteName } from "./midi";
 ```
 
 ### Functions are not exported twice
@@ -84,7 +84,7 @@ In v2 some functions were exported in several places (like `Tonal.transpose` and
 
 Now, every public function is documented in it's own module.
 
-### Most of modules depends on `@tonaljs/core`
+### Most of modules depends on `./core`
 
 The module architecture is easier to grasp:
 

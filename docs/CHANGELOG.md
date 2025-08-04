@@ -34,13 +34,13 @@ Key.majorKeyChords("C").find((chord) => chord.name === "Em"); // => { name: "Em"
 Using default exports for single packages are deprecated, so instead of:
 
 ```js
-import Note from "@tonaljs/note";
+import Note from "./note";
 ```
 
 You should do this:
 
 ```js
-import * as Note from "@tonaljs/note";
+import * as Note from "./note";
 ```
 
 The same for all modules.
@@ -174,15 +174,15 @@ Updated dependencies
 
 - Move core into pitch modules
 - Updated dependencies
-  - @tonaljs/core@4.10.2
+  - ./core@4.10.2
 
 ## 5.1.1
 
 ### Patch Changes
 
-- Restructure code to use new `@tonaljs/pitch`. No changes to functionality
+- Restructure code to use new `./pitch`. No changes to functionality
 - Updated dependencies
-  - @tonaljs/core@4.10.1
+  - ./core@4.10.1
 
 ## 5.1.0
 
@@ -195,15 +195,15 @@ Updated dependencies
   ```
 
 - Updated dependencies [15017c0]
-  - @tonaljs/voicing-dictionary@5.0.0
-  - @tonaljs/voice-leading@5.0.0
-  - @tonaljs/voicing@5.0.0
+  - ./voicing-dictionary@5.0.0
+  - ./voice-leading@5.0.0
+  - ./voicing@5.0.0
 
 ## 5.0.1
 
 - Add -maj7 chord alias
 - Updated dependencies
-  - @tonaljs/chord-type@5.0.2
+  - ./chord-type@5.0.2
 
 ## 5.0.0
 
@@ -239,10 +239,10 @@ The reasons for this change are:
 ### Patch Changes
 
 - Updated dependencies [b07a54c0]
-  - @tonaljs/chord-type@5.0.0
-  - @tonaljs/chord@5.0.0
-  - @tonaljs/scale@4.12.2
-  - @tonaljs/progression@4.8.1
+  - ./chord-type@5.0.0
+  - ./chord@5.0.0
+  - ./scale@4.12.2
+  - ./progression@4.8.1
 
 ## 4.14.2
 
@@ -256,8 +256,8 @@ The reasons for this change are:
 
 - 96df1a19: Add 6add9 to chord types aliases. Rename to "sixth added ninth"
 - Updated dependencies [96df1a19]
-  - @tonaljs/chord-type@4.8.1
-  - @tonaljs/chord@4.10.1
+  - ./chord-type@4.8.1
+  - ./chord@4.10.1
 
 ## 4.14.0
 
@@ -296,7 +296,6 @@ Scale.detect(["C", "D", "E", "F", "G", "A", "B"]);
 ### Minor Changes
 
 - New midi functions
-
   - Midi.pcset
   - Midi.pcsetSteps
   - Midi.pcsetDegrees
@@ -379,14 +378,14 @@ const nearest = Midi.pcsetNearest(Scale.get("D dorian").chroma);
 
 ### Patch Changes
 
-- fix npm publish problem
+- fix pnpm publish problem
 - Updated dependencies
 
 ## 4.7.0
 
 ### Minor Changes
 
-- b120fc42: Publish tonal in `tonal` package. So use `npm install tonal` instead of `npm install @tonaljs/tonal`
+- b120fc42: Publish tonal in `tonal` package. So use `pnpm install tonal` instead of `pnpm install ./tonal`
 
 ### Patch Changes
 
@@ -413,8 +412,8 @@ Adopt a fixed/locked mode with lerna. Before, each module has it's own version. 
 
 Deprecated modules:
 
-- @tonaljs/modules (use tonal)
-- @tonaljs/array (use @tonaljs/collection)
+- ./modules (use tonal)
+- ./array (use ./collection)
 
 ## Before
 

@@ -1,13 +1,13 @@
 # tonal
 
-[![npm version](https://img.shields.io/npm/v/tonal.svg?style=flat-square)](https://www.npmjs.com/package/tonal)
+[![pnpm version](https://img.shields.io/pnpm/v/tonal.svg?style=flat-square)](https://www.pnpmjs.com/package/tonal)
 
 `tonal` is a music theory library. Contains functions to manipulate tonal
 elements of music (note, intervals, chords, scales, modes, keys). It deals with
 abstractions (not actual music or sound).
 
 `tonal` is implemented in Typescript and published as a collection of Javascript
-npm packages.
+pnpm packages.
 
 It uses a functional programming style: all functions are pure, there is no data
 mutation, and entities are represented by data structures instead of objects.
@@ -42,7 +42,7 @@ const triad = Chord.degrees("Cm");
 Install all packages at once:
 
 ```bash
-npm install --save tonal
+pnpm install --save tonal
 ```
 
 You can read [CHANGELOG here](https://github.com/tonaljs/tonal/blob/main/docs/CHANGELOG.md).
@@ -68,7 +68,7 @@ const { Note, Scale } = require("tonal");
 You can use the browser version from jsdelivr CDN directly in your html:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/tonal/browser/tonal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/pnpm/tonal/browser/tonal.min.js"></script>
 <script>
   console.log(Tonal.Key.minorKey("Ab"));
 </script>
@@ -86,14 +86,14 @@ Although the final bundle it is small, you can
 reduce bundle sizes even more by installing the modules individually, and
 importing only the functions you need.
 
-Note that individual modules are prefixed with `@tonaljs/`. For example:
+Note that individual modules are prefixed with `./`. For example:
 
 ```bash
-npm i @tonaljs/note
+pnpm i ./note
 ```
 
 ```js
-import { transpose } from "@tonaljs/note";
+import { transpose } from "./note";
 transpose("A4", "P5");
 ```
 
@@ -103,49 +103,49 @@ Visit the [documentation site](https://tonaljs.github.io/tonal/docs) or the READ
 
 #### Notes and intervals
 
-- [@tonaljs/note](/packages/note): Note operations (simplify, transposeBy )
-- [@tonaljs/midi](/packages/midi): Midi number conversions
-- [@tonaljs/interval](/packages/interval): Interval operations (add, simplify,
+- [./note](/packages/note): Note operations (simplify, transposeBy )
+- [./midi](/packages/midi): Midi number conversions
+- [./interval](/packages/interval): Interval operations (add, simplify,
   invert)
-- [@tonaljs/abc-notation](/packages/abc-notation): Parse ABC
+- [./abc-notation](/packages/abc-notation): Parse ABC
   notation notes
 
 #### Scales and chords
 
-- [@tonaljs/scale](/packages/scale): Scales
-- [@tonaljs/scale-type](/packages/scale-type): A dictionary of scales
-- [@tonaljs/chord](/packages/chord): Chords
-- [@tonaljs/chord-type](/packages/chord-type): A dictionary of chords
-- [@tonaljs/chord-detect](/packages/chord-detect): Detect chords from notes
-- [@tonaljs/pcset](/packages/pcset): Pitch class sets. Compare note groups.
+- [./scale](/packages/scale): Scales
+- [./scale-type](/packages/scale-type): A dictionary of scales
+- [./chord](/packages/chord): Chords
+- [./chord-type](/packages/chord-type): A dictionary of chords
+- [./chord-detect](/packages/chord-detect): Detect chords from notes
+- [./pcset](/packages/pcset): Pitch class sets. Compare note groups.
 
 #### Voicings
 
-- [@tonaljs/voicing](/packages/voicing/): Voicings and voice leadings for chords
-- [@tonaljs/voice-leading](/packages/voice-leading/): Voice leading logic for transitions between voicings
-- [@tonaljs/voicing-dictionary](/packages/voicing-dictionary/): Collections of chord voicings
+- [./voicing](/packages/voicing/): Voicings and voice leadings for chords
+- [./voice-leading](/packages/voice-leading/): Voice leading logic for transitions between voicings
+- [./voicing-dictionary](/packages/voicing-dictionary/): Collections of chord voicings
 
 #### Keys, chord progressions
 
-- [@tonaljs/key](/packages/key): Major and minor keys, it's scales and chords
-- [@tonaljs/mode](/packages/mode): A dictionary of Greek modes (ionian,
+- [./key](/packages/key): Major and minor keys, it's scales and chords
+- [./mode](/packages/mode): A dictionary of Greek modes (ionian,
   dorian...)
-- [@tonaljs/progression](/packages/progression): Chord progressions
-- [@tonaljs/roman-numeral](/packages/roman-numeral): Parse roman numeral symbols
+- [./progression](/packages/progression): Chord progressions
+- [./roman-numeral](/packages/roman-numeral): Parse roman numeral symbols
 
 #### Time, rhythm
 
-- [@tonaljs/rhythm-pattern](/packages/rhythm-pattern): Generate and manipulate rhythmic patterns
-- [@tonaljs/time-signature](/packages/time-signature): Parse time signatures
-- [@tonaljs/duration-value](/packages/duration-value): Note duration values
+- [./rhythm-pattern](/packages/rhythm-pattern): Generate and manipulate rhythmic patterns
+- [./time-signature](/packages/time-signature): Parse time signatures
+- [./duration-value](/packages/duration-value): Note duration values
 
 #### Utilities
 
-- [@tonaljs/core](/packages/core): Core functions (note, interval, transpose and
+- [./core](/packages/core): Core functions (note, interval, transpose and
   distance)
-- [@tonaljs/collection](/packages/collection): Utility functions to work with
+- [./collection](/packages/collection): Utility functions to work with
   collections (range, shuffle, permutations)
-- [@tonaljs/range](/packages/range): Create note ranges
+- [./range](/packages/range): Create note ranges
 
 ## Contributing
 

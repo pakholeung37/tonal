@@ -3,13 +3,14 @@
     "declaration": true,
     "declarationDir": "./dist",
     "strict": true,
-    "module": "es6",
+    "module": "nodenext",
     "noImplicitAny": true,
     "outDir": "./dist",
     "target": "esnext",
     "esModuleInterop": true,
-    "moduleResolution": "node"
+    "moduleResolution": "nodenext",
+    "types": ["vitest/globals"]
   },
-  "include": ["packages/**/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "**/dist/**/*"]
 }
