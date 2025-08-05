@@ -1,8 +1,13 @@
 {
   "name": "@pakholeung37/tonal",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "main": "src/index.ts",
+  "clean-package": {
+    "replace": {
+      "main": "dist/index.js",
+      "module": "dist/index.mjs",
+      "types": "dist/index.d.ts"
+    }
+  },
   "scripts": {
     "publish-packages": "pnpm run test:all && changeset version && changeset publish",
     "build": "tsup src/index.ts --sourcemap --dts --format esm,cjs",
@@ -15,6 +20,10 @@
     "lint:fix": "eslint '**/*.ts' --fix",
     "test:all": "pnpm run format && pnpm run lint && pnpm run build && pnpm run test:run"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "prettier": {},
   "eslintConfig": {
     "extends": [
@@ -46,7 +55,6 @@
     "prettier": "^3.4.2",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2",
-    "vitest": "^3.2.4",
-    "vite": "^7.0.6"
+    "vitest": "^3.2.4"
   }
 }
